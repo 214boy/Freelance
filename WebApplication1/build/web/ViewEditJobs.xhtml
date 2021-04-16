@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/template/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="content">
+        <h1>View and Edit Your Jobs </h1>
+        
+        <div class="center_content">
+            <h1>List of your jobs</h1><br/>
+            <h:outputText value="No jobs available at this time! Please 
+                          Create Job" rendered="#{empty ViewEditBean.allJobs}" />
+            <h:dataTable id="table_form" value="#{ViewEditBean.allJobs}" var="Job"
+                         rendered="#{not empty ViewEditBean.allJobs}"
+                         width='600' cellpadding="5" rowClasses="marginRow">
+                <h:column>
+                    <b>
+                        <div class="row first">Job ID</div>
+                        <div class="row">Job Title:</div>
+                        <div class="row">Payment:</div>
+                        <div class="row">Status:</div>
+                        <div class="row">Description:</div>
+                        <div class="last-row">Action:</div>
+
+                    </b>
+                </h:column>
+                <h:column>
+                    <div class="first row">#{job.jid}</div>
+                    <div class="row">#{job.title}</div>
+                    <div class="row">#{job.payment}</div>
+                    <div class="row">#{job.status}</div>
+                    <div class="row">
+                        <h:form> 
+                            <h:commandButton value="#{job.status}" 
+                                action="#{jobsBean.toggleStatus(job.status,job.jid)}"/>&nbsp;
+                            <h:commandButton value="Remove Job" action="#{jobsBean.remove(job.jid)}"/>&nbsp;
+                            <h:commandButton value="Offers(s)" action="#{jobsBean.viewOffer(job.jid)}"/>
+                        </h:form>
+                    </div>
+                    <div class="row">#{job.description}</div>
+                    
+                </h:column>
+            </h:dataTable>
+        </div>
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/template/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="content">
+        <h1>Freelancers</h1>
+        <div class="center_content">
+            <h:dataTable id="table_form" value="#{Users.allUsers}" var ="freeuser"
+                         width='600' cellpadding="5" rowClasses="marginRow">
+                <h:column>
+                    <b>
+                        <div class="row first">User ID</div>
+                        <div class="row">User_type</div>
+                        <div class="row">Name</div>
+                        <div class="row">Email</div>
+                        <div class="row">Skills</div>
+                        <div class="row">Description</div>
+                        <div class="row">Balance</div>
+                        <div class="last-row">Action:</div>
+
+                    </b>
+                </h:column>
+                <h:column>
+                    <div class="first row">#{freeuser.id}</div>
+                    <div class="row">#{freeuser.user_type}</div>
+                    <div class="row">#{freeuser.Name}</div>
+                    <div class="row">#{freeuser.email}</div>
+                    <div class="row">#{freeuser.skills}</div>
+                    <div class="row">#{freeuser.descriptions}</div>
+                    <div class="row">#{freeuser.Balance}</div>
+                    <div class="last-row"></div>
+                </h:column>
+            </h:dataTable>
+        </div>
+    </ui:define>
+
+</ui:composition>
