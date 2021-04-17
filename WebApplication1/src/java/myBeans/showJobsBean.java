@@ -53,9 +53,8 @@ public class showJobsBean {
 
      
     public void removeJob(Jobs Job){
-        int JD_ID = Job.getJdId();
-        Jobs job = getJob(JD_ID);
-        remove(job);
+ 
+        remove(Job);
     }
     
     
@@ -86,6 +85,9 @@ public class showJobsBean {
     public void remove(Object object) {
         try {
             utx.begin();
+            if (!em.contains(object)) {
+            object = em.merge(object);
+            }
             em.remove(object);
             utx.commit();
         } catch (Exception e) {
