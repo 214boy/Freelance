@@ -7,19 +7,20 @@
 
     <ui:define name="content">
     <h:head>
-        <title>Add new Job</title>
+        <title>Create Job</title>
     </h:head>
        <h:body>
+           <h1>Add A Jobs</h1>
         <h:form>            
-            <h:panelGrid columns="2">
-                 PID (TEMP): <h:inputText value="#{createJob.PID}"/>
-                 Title: <h:inputText value="#{createJob.title}"/>
-                 Description: <h:inputText value="#{createJob.description}"/>
-                 Keywords: <h:inputText value="#{createJob.keywords}"/>
-                 Payment: <h:inputText value="#{createJob.payment}"/>
+            <h:panelGrid columns="2"> 
+                 PID: <h:inputText value="#{createJobBean.PID}"/>
+                 Title: <h:inputText value="#{createJobBean.title}"/>
+                 Description: <h:inputText value="#{createJobBean.description}"/>
+                 Keywords: <h:inputText value="#{createJobBean.keywords}"/>
+                 Payment: <h:inputText value="#{createJobBean.payment}"/>
             </h:panelGrid>
-                 <br/><h:commandButton action="#{createJob.create()}" value ="Add Job"/>
-                 <br/><h:outputText value="#{createJob.notification()}"/>
+                 <br/><h:commandButton action="#{createJobBean.create()}" value ="Add Job"/>
+                 <br/><h:outputText value="#{createJobBean.notification()}"/>
                  <br/><h:commandButton action="index" value="Back to Home"/>
         </h:form>
        </h:body>

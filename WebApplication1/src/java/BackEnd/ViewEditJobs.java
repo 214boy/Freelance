@@ -25,10 +25,10 @@ import javax.inject.Named;
 @Named(value = "ViewEditBean")
 @RequestScoped
 public class ViewEditJobs implements Serializable{
-    private static ArrayList<Job> Jobs = new ArrayList<>();
-    private static ArrayList<Job> Offers = new ArrayList<>();
-    private Job Job; 
-    private Job Offer; 
+    private static ArrayList<Jobs> Jobs = new ArrayList<>();
+    private static ArrayList<Jobs> Offers = new ArrayList<>();
+    private Jobs Job; 
+    private Jobs Offer; 
     
     private static final String URL = "jdbc:derby://localhost:1527/sample";
     private static final String USER = "app";
@@ -105,11 +105,11 @@ public class ViewEditJobs implements Serializable{
     }
     
     //show all jobs
-    public ArrayList<Job> getAllJobs() {
+    public ArrayList<Jobs> getAllJobs() {
         return Jobs;
     }
     //view open offers
-    public ArrayList<Job> getAllOffers() {
+    public ArrayList<Jobs> getAllOffers() {
         return Offers;
     }
 }

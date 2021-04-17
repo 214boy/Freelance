@@ -5,59 +5,70 @@
  */
 package myBeans;
 
-
-import java.time.LocalDate;
-import javax.ejb.EJB;
-import javax.enterprise.context.RequestScoped; 
-import javax.inject.Named;
 import enterpriseBeans.newJobBeanLocal;
+//import enterpriseBeans.updateJobBeanLocal;
+import BackEnd.Jobs;
+import javax.ejb.EJB;
+import javax.inject.Named;
+import javax.enterprise.context.RequestScoped;
 
 /**
  *
- * @author Fiachra
+ * @author Reiner
  */
-
-@Named(value = "createJob")
+@Named(value = "createJobBean")
 @RequestScoped
-public class CreateJob{
- 
+public class CreateJob {
+
     @EJB
     private newJobBeanLocal newJobBean;
-    
+
     private int JD_ID;
     private int PID;
     private String title;
     private String description;
     private String keywords;
     private double payment;
-    private String status;
-    private LocalDate createdOn;
     
     
-    public int getPID() {
+
+    /**
+     * Get the value of id
+     *
+     * @return the value of id
+     */
+    public Integer getJD_ID() {
+        return JD_ID;
+    }
+
+    public void setJD_ID(Integer JD_ID) {
+        this.JD_ID = JD_ID;
+    }
+    
+    public Integer getPID() {
         return PID;
     }
 
-    public void setPID(int PID) {
+    public void setPID(Integer PID) {
         this.PID = PID;
     }
-    
+
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String Title) {
-        this.title = Title;
+    public void setTitle(String title) {
+        this.title = title;
     }
-    
-     public String getDescription() {
+
+    public String getDescription() {
         return description;
     }
 
     public void setDescription(String Description) {
         this.description = Description;
     }
-    
+
     public String getKeywords() {
         return keywords;
     }
@@ -65,52 +76,34 @@ public class CreateJob{
     public void setKeywords(String Keywords) {
         this.keywords = Keywords;
     }
-    
-    public String getStatus() {
-        return status;
-    }
 
-    public void setStauts(String Status) {
-        this.status = Status;
-    }
-    
-    public double getPayment() {
+    public Double getPayment() {
         return payment;
     }
 
-    public void setPayment(double Payment) {
-        this.payment = Payment;
+    public void setPayment(Double payment) {
+        this.payment = payment;
     }
-    
+
+
     /**
-     * Get the value of CreatedOn
-     *
-     * @return the value of CreatedOn
+     * Creates a new customer with name, city, state stored in this bean
      */
-    public LocalDate getCreatedOn() {
-        return createdOn;
+    public void create() {
+        JD_ID = newJobBean.createNewJob(PID, title, description,
+             keywords, payment);
     }
 
     /**
-     * Set the value of CreatedOn
-     *
-     * @param CreatedOn new value of CreatedOn
+     * Creates a new instance of AddCustomerBean
      */
-    public void setCreatedOn(LocalDate CreatedOn) {
-        this.createdOn = CreatedOn;
-    }
-    
-    public void create(){
-        JD_ID = newJobBean.createNewJob(PID, title, 
-                description, keywords, payment);
-    }
-    
-    public void CreateJob(){
+    public CreateJob() {
         JD_ID = 0;
     }
     
     public String notification() {
         if (JD_ID == 0) return "";
-        else return "New job with id " + JD_ID + " created!!!";
+        else return "New user with id " + JD_ID + " created!!!";
     }
+
 }

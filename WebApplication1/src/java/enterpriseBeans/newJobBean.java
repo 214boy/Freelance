@@ -5,8 +5,8 @@
  */
 package enterpriseBeans;
 
-import BackEnd.Job;
-import java.time.LocalDate;
+import BackEnd.Jobs;
+import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.ejb.Stateless;
 import javax.persistence.PersistenceContext;
@@ -19,7 +19,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class newJobBean implements newJobBeanLocal{
     
-    //@PersistenceContext(unitName = "PersistanceUnit")
+    @PersistenceContext(unitName = "PersistanceUnit")
     private EntityManager em;
          
     
@@ -28,22 +28,23 @@ public class newJobBean implements newJobBeanLocal{
      * Required foreign keys DiscountCode and MicroMarket for the table Customer
      * are fixed in this example.
      *
-     * @param name New name for new customer
-     * @param city City for new customer
-     * @param state State for new customer
-     * @return ID of newly created customer
+     * @param PID
+     * @param title
+     * @param Description
+     * @param Keywords
+     * @param payment
+     * @return ID of newly created job
      */
 
-    @Override
     public int createNewJob(int PID, String title, String Description, 
     String Keywords,double payment){
         
-        LocalDate CreatedOn = LocalDate.now();
-        int id = (Integer) em.createNamedQuery("Job.getHighestJD_ID").getSingleResult();
+        Date CreatedOn = new Date();
+        int id = (Integer) em.createNamedQuery("Jobs.getHighestJobID").getSingleResult();
         // id is current highest, increment to next id
         id++;
         // create customer object
-        Job j = new Job(id);
+        Jobs j = new Jobs(id);
 
 
   
@@ -53,13 +54,14 @@ public class newJobBean implements newJobBeanLocal{
         persist(j);
 
         
-        // set city and name and state
-        j.setPID(PID);
+       
+        j.setPid(PID);
         j.setTitle(title);
         j.setDescription(Description);
+        j.setKeywords(Keywords);
         j.setStatus("Open");
         j.setPayment(payment);
-        j.setCreatedOn(CreatedOn);
+        j.setCreatedon(CreatedOn);
         
 
         // return id of new customer

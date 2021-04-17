@@ -4,7 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/src/java/enterpriseBeans/newJobBean.java</file>
-            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/src/java/BackEnd/Job.java</file>
+            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/src/java/myBeans/CreateJob.java</file>
+            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/src/java/enterpriseBeans/newJobBeanLocal.java</file>
+            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/src/java/BackEnd/Jobs.java</file>
+            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/web/createJob.xhtml</file>
         </group>
     </open-files>
 </project-private>
