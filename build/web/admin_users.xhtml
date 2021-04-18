@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/template/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f = "http://java.sun.com/jsf/core">
+
+    <ui:define name="content">
+    <h:head>
+        <title>Data Table Example</title>
+    </h:head>
+    <h:body >
+        <h1>Freelancers <h:form> <h:commandButton class='block_small' value='Jobs' action="admin_jobs.xhtml"/> </h:form></h1> 
+        <h2>All Freelancers</h2>
+        <h:form> 
+            <h:dataTable class="DT" value='#{showProfileBean.getProfileByFlance()}' var='fprofile'
+                         border='1' width='300' cellpadding="5">
+                <h:column>
+                    <f:facet name='header'>ID</f:facet>
+                        #{fprofile.uid}
+                </h:column>
+                <h:column>
+                    <f:facet name='header'>Name</f:facet>
+                        #{fprofile.name}
+                </h:column>
+                <h:column>
+                    <f:facet name='header'>Email</f:facet>
+                        #{fprofile.email}
+                </h:column>
+                <h:column>
+                    <h:commandButton value='delete' action='#{editProfileBean.delete(fprofile)}'/>
+                </h:column>
+            </h:dataTable>
+            
+            <h1>Providers</h1>
+            <h2>All Providers</h2>
+            <h:dataTable class="DT" value='#{showProfileBean.getProfileByProv()}' var='pprofile'
+                         border='1' width='300' cellpadding="5">
+                <h:column>
+                    <f:facet name='header'>ID</f:facet>
+                        #{pprofile.uid}
+                </h:column>
+                <h:column>
+                    <f:facet name='header'>Name</f:facet>
+                        #{pprofile.name}
+                </h:column>
+                <h:column>
+                    <f:facet name='header'>Email</f:facet>
+                        #{pprofile.email}
+                </h:column>
+                <h:column>
+                    <h:commandButton value='delete' action='#{editProfileBean.delete(pprofile)}'/>
+                </h:column>
+            </h:dataTable>
+            
+            <h2> Add User </h2>
+            <table>
+
+                <tr>
+                   <td>Freelancer</td>
+                   <td><h:selectBooleanCheckbox value = "#{addProfileBean.flance}" /></td>
+                </tr>
+
+                <tr>
+                   <td>Provider</td>
+                   <td><h:selectBooleanCheckbox value = "#{addProfileBean.prov}" /></td>
+                </tr>
+
+                <tr>
+                   <td>Admin</td>
+                   <td><h:selectBooleanCheckbox value = "#{addProfileBean.adm}" /></td>
+                </tr>
+
+                <tr>
+                  <td>Name</td>
+                  <td><h:inputText size = "20" value = "#{addProfileBean.name}" /></td>
+                </tr>
+                
+                <tr>
+                  <td>Email</td>
+                  <td><h:inputText size = "20" value = "#{addProfileBean.email}" /></td>
+                </tr>
+
+                <tr>
+                   <td>Description</td>
+                   <td><h:inputTextarea cols = "50" rows='10' value = "#{addProfileBean.description}" /></td>
+                </tr>
+
+                <tr>
+                   <td>Balance</td>
+                   <td><h:inputText size = "10" value = "#{addProfileBean.balance}" /></td>
+                </tr>
+                
+                <tr>
+                   <td>Password</td>
+                   <td><h:inputText size = "10" value = "#{addProfileBean.password}" /></td>
+                </tr>
+
+                <tr>
+                   <td> </td>
+                   <td><h:commandButton class='block_small' value = "Add Employee" 
+                      action = "#{addProfileBean.create()}" /></td>
+                </tr>
+             </table>	
+            
+        </h:form>   
+    </h:body>
+
+
+    </ui:define>
+
+</ui:composition>

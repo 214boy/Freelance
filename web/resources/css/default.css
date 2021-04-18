@@ -1,0 +1,157 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6 Apr 2021, 10:37:50
+    Author     : eddie
+*/
+*{
+  font-family: 'Roboto', sans-serif;
+    
+}
+
+
+.logo  {
+  background: url('../images/logo2.png') top center no-repeat;
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;  
+  opacity: .4; 
+  z-index: -1;
+}
+
+.sep{
+    width: -webkit-fit-content;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ebebeb;
+    padding: 5px;
+
+}
+    
+h1 {
+    font: Arial;
+    color: #FF7400;
+    position: relative;
+    margin-top:30px;
+    margin-left: 30px;
+}
+
+.container{  
+text-align: center;  
+color: black;
+width: 800px;  
+height: 200px;  
+padding-top: 100px;  
+} 
+
+.button {
+  width: 100px;
+  height: 20px;
+  background-color: #000000;
+  color: #FFFFFF;
+  float: right;
+  padding: 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+  height: 40px;
+  float: right;
+  border: outset;
+  background-color: #FF7400;
+  padding: 10px 11px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.block_small{
+  display: block;
+  width: 100px;
+  height: 40px;
+  float: right;
+  border: outset;
+  background-color: #FF7400;
+  margin-right: 10px;
+  margin-left: 70px;
+  padding: 10px 11px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  display: grid
+}
+
+
+.bottom {
+    font: Arial;
+    position: fixed;
+    bottom: 0;
+    font-size: 8px;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+#button_middle {
+    width: -webkit-fit-content;
+    bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;  
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.DT{
+  border: 1px #4d4d4d;
+  width: 100%;
+  background-color: #ebebeb;
+  text-align: center;
+}
+
+.center_content {
+    position: relative;
+    width: -webkit-fit-content;
+    background-color: #ebebeb;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center_content_container {
+    position: relative;
+    width: -webkit-fit-content;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+table{
+    background-color: #ebebeb;
+}
+
