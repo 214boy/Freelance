@@ -16,9 +16,9 @@ import javax.persistence.PersistenceContext;
  * @author lunch
  */
 
+    
 @Stateless
 public class newJobBean implements newJobBeanLocal{
-    
     @PersistenceContext(unitName = "PersistanceUnit")
     private EntityManager em;
          
@@ -31,18 +31,28 @@ public class newJobBean implements newJobBeanLocal{
      * @param PID
      * @param title
      * @param Description
-     * @param Keywords
+     * @param Keywords1
+     * @param Keywords2
+     * @param Keywords3
      * @param payment
      * @return ID of newly created job
      */
 
+    @Override
     public int createNewJob(int PID, String title, String Description, 
-    String Keywords,double payment){
-        
+    String Keywords1, String Keywords2, String Keywords3, double payment){
+
         Date CreatedOn = new Date();
         int id = (Integer) em.createNamedQuery("Jobs.getHighestJobID").getSingleResult();
+        
+        //named query to the current user table
+        //int pid = (Integer) em.createNamedQuery("Jobs.getHighestJobID").getSingleResult();
+        
         // id is current highest, increment to next id
         id++;
+        
+        
+
         // create customer object
         Jobs j = new Jobs(id);
 
@@ -58,7 +68,9 @@ public class newJobBean implements newJobBeanLocal{
         j.setPid(PID);
         j.setTitle(title);
         j.setDescription(Description);
-        j.setKeywords(Keywords);
+        j.setKeywords1(Keywords1);
+        j.setKeywords2(Keywords2);
+        j.setKeywords3(Keywords3);
         j.setStatus("Open");
         j.setPayment(payment);
         j.setCreatedon(CreatedOn);

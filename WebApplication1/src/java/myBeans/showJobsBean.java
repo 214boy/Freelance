@@ -42,16 +42,9 @@ public class showJobsBean {
         // return query result
         return query.getResultList();
     }
-
-     public Jobs getJob(int JD_ID) {
-        // create named query and set parameter
-        Query query = em.createNamedQuery("Jobs.findByJdId")
-                .setParameter("jdId", JD_ID);
-        List<Jobs> result = query.getResultList();
-        return result.get(0);
-    }
-
      
+    
+    
     public void removeJob(Jobs Job){
  
         remove(Job);

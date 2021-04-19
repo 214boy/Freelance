@@ -35,7 +35,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Jobs.findByFid", query = "SELECT j FROM Jobs j WHERE j.fid = :fid"),
     @NamedQuery(name = "Jobs.findByTitle", query = "SELECT j FROM Jobs j WHERE j.title = :title"),
     @NamedQuery(name = "Jobs.findByDescription", query = "SELECT j FROM Jobs j WHERE j.description = :description"),
-    @NamedQuery(name = "Jobs.findByKeywords", query = "SELECT j FROM Jobs j WHERE j.keywords = :keywords"),
+    @NamedQuery(name = "Jobs.findByKeywords1", query = "SELECT j FROM Jobs j WHERE j.keywords1 = :keywords1"),
+    @NamedQuery(name = "Jobs.findByKeywords2", query = "SELECT j FROM Jobs j WHERE j.keywords2 = :keywords2"),
+    @NamedQuery(name = "Jobs.findByKeywords3", query = "SELECT j FROM Jobs j WHERE j.keywords3 = :keywords3"),
     @NamedQuery(name = "Jobs.findByPayment", query = "SELECT j FROM Jobs j WHERE j.payment = :payment"),
     @NamedQuery(name = "Jobs.findByStatus", query = "SELECT j FROM Jobs j WHERE j.status = :status"),
     @NamedQuery(name = "Jobs.getHighestJobID", query = "SELECT MAX(j.jdId) from Jobs j"),
@@ -59,9 +61,12 @@ public class Jobs implements Serializable {
     @Column(name = "DESCRIPTION")
     private String description;
     @Size(max = 255)
-    @Column(name = "KEYWORDS")
-    private String keywords;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Column(name = "KEYWORDS1")
+    private String keywords1;
+    @Column(name = "KEYWORDS2")
+    private String keywords2;    
+    @Column(name = "KEYWORDS3")
+    private String keywords3;
     @Column(name = "PAYMENT")
     private Double payment;
     @Size(max = 255)
@@ -118,14 +123,30 @@ public class Jobs implements Serializable {
         this.description = description;
     }
 
-    public String getKeywords() {
-        return keywords;
+    public String getKeywords1() {
+        return keywords1;
     }
 
-    public void setKeywords(String keywords) {
-        this.keywords = keywords;
+    public void setKeywords1(String keywords) {
+        this.keywords1 = keywords;
+    }
+        
+    public String getKeywords2() {
+        return keywords2;
     }
 
+    public void setKeywords2(String keywords) {
+        this.keywords2 = keywords;
+    }
+
+    public String getKeywords3() {
+        return keywords3;
+    }
+
+    public void setKeywords3(String keywords) {
+        this.keywords3 = keywords;
+    }
+    
     public Double getPayment() {
         return payment;
     }

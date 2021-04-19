@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/src/java/enterpriseBeans/newJobBean.java</file>
-            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/src/java/myBeans/CreateJob.java</file>
-            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/src/java/enterpriseBeans/newJobBeanLocal.java</file>
+            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/src/java/enterpriseBeans/acceptFreelancerBeanLocal.java</file>
+            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/src/java/myBeans/acceptFreelancer.java</file>
             <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/src/java/BackEnd/Jobs.java</file>
-            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/web/createJob.xhtml</file>
+            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/src/java/enterpriseBeans/acceptFreelancerBean.java</file>
+            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/web/showAllJobs.xhtml</file>
+            <file>file:/C:/Users/lunch/Documents/NetBeansProjects/WebApplication1/src/java/myBeans/showByKeywords.java</file>
         </group>
     </open-files>
 </project-private>

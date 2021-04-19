@@ -6,8 +6,6 @@
 package myBeans;
 
 import enterpriseBeans.newJobBeanLocal;
-//import enterpriseBeans.updateJobBeanLocal;
-import BackEnd.Jobs;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -27,7 +25,9 @@ public class CreateJob {
     private int PID;
     private String title;
     private String description;
-    private String keywords;
+    private String keywords1;
+    private String keywords2;
+    private String keywords3;
     private double payment;
     
     
@@ -69,12 +69,28 @@ public class CreateJob {
         this.description = Description;
     }
 
-    public String getKeywords() {
-        return keywords;
+    public String getKeywords1() {
+        return keywords1;
     }
 
-    public void setKeywords(String Keywords) {
-        this.keywords = Keywords;
+    public void setKeywords1(String keywords) {
+        this.keywords1 = keywords;
+    }
+        
+    public String getKeywords2() {
+        return keywords1;
+    }
+
+    public void setKeywords2(String keywords) {
+        this.keywords2 = keywords;
+    }
+
+    public String getKeywords3() {
+        return keywords1;
+    }
+
+    public void setKeywords3(String keywords) {
+        this.keywords3 = keywords;
     }
 
     public Double getPayment() {
@@ -91,7 +107,7 @@ public class CreateJob {
      */
     public void create() {
         JD_ID = newJobBean.createNewJob(PID, title, description,
-             keywords, payment);
+             keywords1,keywords2, keywords3, payment);
     }
 
     /**

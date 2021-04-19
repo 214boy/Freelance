@@ -5,13 +5,16 @@
  */
 package enterpriseBeans;
 
+import BackEnd.Jobs;
 import javax.ejb.Local;
 /**
  *
  * @author lunch
  */
 @Local
-public interface newJobBeanLocal {
-    public int createNewJob(int PID, String title, String Description, 
-    String Keywords1,String Keywords2, String Keywords3, double payment);
+public interface acceptFreelancerBeanLocal {
+    public void acceptFreelancer(int JD_ID, int FID, String Freelancer);
+    public Jobs getJob(int JD_ID);
+    public void jobCompleted(int JD_ID);
 }
+

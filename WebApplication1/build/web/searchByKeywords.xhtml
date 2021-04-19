@@ -11,9 +11,11 @@
     </h:head>
     <h:body>
         <h:form>
-        <h1>List all Jobs</h1>
+        <h1>List Jobs per Keywords</h1>
+        Enter Keywords: 
+        <h:inputText value="#{showKeywordsBean.keywords}"/>
         <h3>
-            <h:dataTable value="#{showJobsBean.getAllJobs()}" 
+            <h:dataTable value="#{showKeywordsBean.getAllKeywords()}" 
                          var="jobs" border="1" cellpadding="10">
                 <h:column>
                     <f:facet name="header">Title</f:facet>
@@ -27,15 +29,6 @@
                     <f:facet name="header">Status</f:facet>
                         #{jobs.status}
                 </h:column>
-                <h:column>
-                    <h:commandButton value='delete' action='#{showJobsBean.removeJob(jobs)}'/>
-                </h:column>
-                <h:column>
-                    <h:commandButton value='View Offers' action='ViewOffersPage'/>
-                </h:column>
-                <h:column>
-                    <h:commandButton value='Accept Freelancer' action='#{acceptFreelancer.acceptJob()}'/>
-                </h:column>
             </h:dataTable>
         </h3>
         <br/><br/>
@@ -46,4 +39,3 @@
     </h:body>
          </ui:define>
 </ui:composition>
-
