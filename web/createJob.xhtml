@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/template/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="content">
+    <h:head>
+        <title>Create Jobs</title>
+    </h:head>
+       <h:body>
+           <h1>Add A Job</h1>
+        <h:form>            
+            <h:panelGrid columns="2"> 
+                 PID: <h:inputText value="#{createJobBean.PID}"/>
+                 Title: <h:inputText value="#{createJobBean.title}"/>
+                 Description: <h:inputText value="#{createJobBean.description}"/>
+                 Keyword 1: <h:inputText value="#{createJobBean.keywords1}"/>
+                 Keyword 2: <h:inputText value="#{createJobBean.keywords2}"/>
+                 Keyword 3: <h:inputText value="#{createJobBean.keywords3}"/>
+                 Payment: <h:inputText value="#{createJobBean.payment}"/>
+            </h:panelGrid>
+                 <br/><h:commandButton action="#{createJobBean.create()}" value ="Add Job"/>
+                 <br/><h:outputText value="#{createJobBean.notification()}"/>
+                 <br/><h:commandButton action="index" value="Back to Home"/>
+        </h:form>
+       </h:body>
+    </ui:define>
+</ui:composition>
+
