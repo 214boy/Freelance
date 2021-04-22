@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Named JPQL Demo</title>
+    </h:head>
+    <h:body>
+        <h1>Demonstrate Named JPQL Queries</h1>
+        <h:form>
+            <h:panelGrid columns="2">
+                Enter Customer Name: 
+                <h:inputText value="#{showCustomerBean.customerName}"/>
+                <br/>
+                <h:commandButton action="showCustomerByName" value="Show by Name"/>
+                Enter Customer City: 
+                <h:inputText value="#{showCustomerBean.customerCity}"/>
+                <br/>
+                <h:commandButton action="showCustomerByCity" value="Show by City"/>
+                Enter Customer ID:
+                <h:inputText value="#{editCustomerBean.id}"/>
+                <br/>
+                <h:commandButton action="editCustomer" value="Edit Customer"/>
+                <br/><br/>
+                <br/>
+                <h:commandButton action="addCustomer" value="Create Customer"/>
+                
+                
+            </h:panelGrid>
+        </h:form>
+        <br/><br/>
+        Useful patterns:
+        <ul>
+            <li>Name: New Enterprises</li>
+            <li>Name: Big Car Parts</li>
+            <li>City: New York</li>
+            <li>City: Miami</li>
+            <li>City: Houston</li>
+            <li>Attack: anything' or 'x'='x</li>
+        </ul>
+    </h:body>
+</html>
+
