@@ -31,12 +31,21 @@ public class ShowProfileBean {
     private String profileName;
     private String profileEmail;
     private boolean profileFlance; 
-    private boolean profileProv; 
+    private boolean profileProv;
+    private boolean profileLoggedin; 
     
     /**
      * Creates a new instance of ShowProfileBean
      */
     public ShowProfileBean() {
+    }
+    
+    public List<Profile> getAllProfiles() {
+        // create named query and set parameter
+        Query query = em.createNamedQuery(
+                "Profile.findAll");
+        // return query result
+        return query.getResultList();
     }
 
     /**
@@ -86,6 +95,15 @@ public class ShowProfileBean {
         // create named query and set parameter
         Query query = em.createNamedQuery("Profile.findByProv")
                 .setParameter("prov", profileProv);
+        // return query result
+        return query.getResultList();
+    }
+    
+    public List<Profile> getProfileByLoggedin() {
+
+        // create named query and set parameter
+        Query query = em.createNamedQuery("Profile.findByLoggedin")
+                .setParameter("loggedin", profileLoggedin);
         // return query result
         return query.getResultList();
     }
@@ -155,6 +173,20 @@ public class ShowProfileBean {
         this.profileProv = profileProv;
     }
 
+    public void remove(Object object) {
+        try {
+            utx.begin();
+            if (!em.contains(object)) {
+            object = em.merge(object);
+            }
+            em.remove(object);
+            utx.commit();
+        } catch (Exception e) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", e);
+            throw new RuntimeException(e);
+        }
+    }
+    
     /**
      * Auto-generated method for managing access to persist method
      * of entity manager

@@ -1,21 +1,43 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition template="/template/template.xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+
     <ui:define name="content">
-    <h:head>
-        <title>HoBo</title>
-    </h:head>
-    <h:body>
-        <h1>Please Select Your Role</h1>
-        <h:form>
-            <h:commandButton action="free_login.xhtml" class ="block_small" value="Freelancer" />
-            <h:commandButton action="showAllJobs.xhtml" class ="block_small" value="Provider" />
-            <h:commandButton action="admin_login.xhtml" class ="block_small" value="Administator" />
-        </h:form>
-    </h:body>
+        <h1>Welcome To HoBo </h1>
+    <h2>Login</h2>
+    <h:form id="loginForm">
+        <div id="userNameDiv" class="textPlacement">
+            <h:outputLabel value="Username: " />
+            <h:inputText value="#{loginBean.profileName}" />
+        </div>
+        <div id="passwordDiv" class="textPlacement">
+            <h:outputLabel value="Password: " />
+            <h:inputSecret value="#{loginBean.profilePassword}" />
+        </div>
+        <div id="submitBtn" class="textPlacement">
+            <h:commandButton value="Login" action="#{loginBean.validateUserLogin}" />
+        </div>
+    </h:form>
+    <h:form>
+        <label for="psw"></label>
+        <p>Master Login</p> 
+        <h:inputText>
+            <f:validateRegex pattern="master"/>
+        </h:inputText>
+
+        <h:commandButton class="block" value ="Master Access" action="admin_users.xhtml"/>
+    </h:form>
     </ui:define>
+
 </ui:composition>
 

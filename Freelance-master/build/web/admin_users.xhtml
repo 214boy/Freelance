@@ -11,7 +11,7 @@
         <title>Data Table Example</title>
     </h:head>
     <h:body >
-        <h1>Freelancers <h:form> <h:commandButton class='block_small' value='Jobs' action="admin_jobs.xhtml"/> </h:form></h1> 
+        <h1>Freelancers <h:form> <h:commandButton class='block_small' value='Jobs' action="showAllJobs.xhtml"/> </h:form></h1> 
         <h2>All Freelancers</h2>
         <h:form> 
             <h:dataTable class="DT" value='#{showProfileBean.getProfileByFlance()}' var='fprofile'
@@ -25,11 +25,11 @@
                         #{fprofile.name}
                 </h:column>
                 <h:column>
-                    <f:facet name='header'>Email</f:facet>
-                        #{fprofile.email}
+                    <f:facet name='header'>Logged In</f:facet>
+                        #{fprofile.loggedin}
                 </h:column>
                 <h:column>
-                    <h:commandButton value='delete' action='#{editProfileBean.delete(fprofile)}'/>
+                    <h:commandButton value='delete' action='#{showProfileBean.remove(fprofile)}'/>
                 </h:column>
             </h:dataTable>
             
@@ -46,11 +46,11 @@
                         #{pprofile.name}
                 </h:column>
                 <h:column>
-                    <f:facet name='header'>Email</f:facet>
-                        #{pprofile.email}
+                    <f:facet name='header'>Logged in</f:facet>
+                        #{pprofile.loggedin}
                 </h:column>
                 <h:column>
-                    <h:commandButton value='delete' action='#{editProfileBean.delete(pprofile)}'/>
+                    <h:commandButton value='delete' action='#{showProfileBean.remove(pprofile)}'/>
                 </h:column>
             </h:dataTable>
             

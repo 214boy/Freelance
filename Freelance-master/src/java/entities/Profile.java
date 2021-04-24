@@ -38,6 +38,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Profile.findByBalance", query = "SELECT p FROM Profile p WHERE p.balance = :balance"),
     @NamedQuery(name = "Profile.findByPassword", query = "SELECT p FROM Profile p WHERE p.password = :password"),
     @NamedQuery(name = "Profile.findByPassword", query = "SELECT p FROM Profile p WHERE p.password = :password"),
+    @NamedQuery(name = "Profile.findByLoggedin", query = "SELECT p FROM Profile p WHERE p.loggedin = :loggedin"),
     @NamedQuery(name = "Profile.getHighestProfileID", query = "SELECT MAX(p.uid) from Profile p")})
 
 public class Profile implements Serializable {
@@ -73,6 +74,8 @@ public class Profile implements Serializable {
     @Size(max = 30)
     @Column(name = "PASSWORD")
     private String password;
+    @Column(name = "LOGGEDIN")
+    private boolean loggedin;
 
     public Profile() {
     }
@@ -89,7 +92,7 @@ public class Profile implements Serializable {
         this.uid = uid;
     }
 
-    public Boolean getFlance() {
+    public boolean getFlance() {
         return flance;
     }
 
@@ -97,7 +100,7 @@ public class Profile implements Serializable {
         this.flance = flance;
     }
 
-    public Boolean getProv() {
+    public boolean getProv() {
         return prov;
     }
 
@@ -105,7 +108,7 @@ public class Profile implements Serializable {
         this.prov = prov;
     }
 
-    public Boolean getAdm() {
+    public boolean getAdm() {
         return adm;
     }
 
@@ -159,6 +162,14 @@ public class Profile implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean getLoggedin() {
+        return loggedin;
+    }
+
+    public void setLoggedin(boolean loggedin) {
+        this.loggedin = loggedin;
     }
 
     @Override

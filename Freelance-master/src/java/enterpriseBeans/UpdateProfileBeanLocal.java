@@ -14,7 +14,8 @@ import javax.ejb.Local;
  */
 @Local
 public interface UpdateProfileBeanLocal {
-    public void update(int id, String name, String email, String password);
+    public void update(int id, String name, boolean loggedin, String password);
     public Profile getProfile(int id);
-    public String deleteAction(Profile p);
+    public void Loggedin(Profile profile);
+    public void Loggedout();
 }

@@ -2,6 +2,28 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Tools/netbeans/Freelance-master/src/java/myBeans/AddProfileBean.java</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/src/java/myBeans/acceptFreelancer.java</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/web/response.xhtml</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/src/java/myBeans/showByKeywords.java</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/src/java/enterpriseBeans/acceptFreelancerBeanLocal.java</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/src/java/enterpriseBeans/acceptFreelancerBean.java</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/web/admin_login.xhtml</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/src/java/myBeans/showJobsBean.java</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/src/java/myBeans/CreateJob.java</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/src/java/myBeans/ShowProfileBean.java</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/src/java/myBeans/EditProfileBean.java</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/web/free_login.xhtml</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/src/java/enterpriseBeans/newJobBean.java</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/web/showAllJobs.xhtml</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/src/java/enterpriseBeans/NewProfileBean.java</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/src/java/enterpriseBeans/UpdateProfileBean.java</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/src/java/entities/Jobs.java</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/web/index.xhtml</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/web/admin_users.xhtml</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/nbproject/build-impl.xml</file>
+            <file>file:/C:/Tools/netbeans/Freelance-master/web/createJob.xhtml</file>
+        </group>
     </open-files>
 </project-private>

@@ -9,7 +9,6 @@ import entities.Profile;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.swing.JOptionPane;
 
 /**
  *

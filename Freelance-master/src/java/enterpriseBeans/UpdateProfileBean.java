@@ -27,16 +27,35 @@ public class UpdateProfileBean implements UpdateProfileBeanLocal {
      * 
      * @param id ID of profile to be updated
      * @param name new name for profile
-     * @param email new email for profile
+     * @param loggedin new loggedin for profile
      * @param password new password for profile
      */
     @Override
-    public void update(int id, String name, String email, String password) {
+    public void update(int id, String name, boolean loggedin, String password) {
         Profile custom = getProfile(id);
         if (custom != null) {
             custom.setName(name);
-            custom.setEmail(email);
+            custom.setLoggedin(loggedin);
             custom.setPassword(password);
+        }
+    }
+    
+    @Override
+    public void Loggedin(Profile profile) {
+        int id = profile.getUid();
+        Profile custom = getProfile(id);
+        if (custom != null) {
+            custom.setLoggedin(true);
+        }
+    }
+    
+    @Override
+    public void Loggedout() {
+        Query query = em.createNamedQuery("Profile.findByLoggedin")
+                                .setParameter("loggedin", true);
+        Profile custom = (Profile) query.getSingleResult();
+        if (custom != null) {
+            custom.setLoggedin(false);
         }
     }
 
@@ -49,17 +68,12 @@ public class UpdateProfileBean implements UpdateProfileBeanLocal {
     @Override
     public Profile getProfile(int uid) {
         // create named query and set parameter
-        Query query = em.createNamedQuery("Profile.findByProfileId")
+        Query query = em.createNamedQuery("Profile.findByUid")
                 .setParameter("uid", uid);
         List<Profile> result = query.getResultList();
         return result.get(0);
     }
     
-    public String deleteAction(Profile p) {
-                em.remove(p);
-        return null;
-    }
-
     /**
      * make the passed object persistent
      * @param object object to be made persistent

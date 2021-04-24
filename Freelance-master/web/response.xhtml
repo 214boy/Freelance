@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/template/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+
+        <h1>Using validator registered in facesconfig.xml</h1>
+        <h:form>
+            <h:dataTable value='#{showProfileBean.getAllProfiles()}' var='profile'
+                         border='0' width='300' cellpadding="5">
+                <h:column>
+                    <f:facet name='header'>Valid Profile Names</f:facet>
+                    <h:outputText value="#{profile.name}"/>
+                </h:column>
+            </h:dataTable>
+            <br/>
+            ---------------------------------------------------------------------
+            <br/>
+            
+            <h2>
+                <h:outputText value="Email address '#{sampleBean.email}' is valid" rendered="#{sampleBean.emailNotEmpty()}"/>
+                    
+                <br/><br/>
+                Email (facesconfig): <h:inputText id="emailanno" value="#{sampleBean.email}">
+                    <f:validator validatorId="myvalidatorxml"/>
+                </h:inputText><br/>
+                <h:commandButton value="Submit" action="free_login.xhtml"/>
+            </h2>
+        </h:form>        
+    </ui:define>
+</ui:composition>
+

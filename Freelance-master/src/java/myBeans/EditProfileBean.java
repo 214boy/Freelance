@@ -26,7 +26,7 @@ public class EditProfileBean implements Serializable {
 
     private int uid;
     private String name;
-    private String email;
+    private boolean loggedin;
     private String password;
     private Profile custom;
 
@@ -41,7 +41,7 @@ public class EditProfileBean implements Serializable {
 
     /**
      * Set the value of id Also populates the custom field with the matching
-     * Entity object from entity manager and updates fields name, email, password to
+     * Entity object from entity manager and updates fields name, loggedin, password to
      * match entity object.
      *
      * @param uid new value of id
@@ -51,7 +51,7 @@ public class EditProfileBean implements Serializable {
         custom = updateProfileBean.getProfile(uid);
         if (custom != null) {
             name = custom.getName();
-            email = custom.getEmail();
+            loggedin = custom.getLoggedin();
             password = custom.getPassword();
         }
     }
@@ -79,35 +79,35 @@ public class EditProfileBean implements Serializable {
      *
      * @return the value of State
      */
-    public String getState() {
+    public String getPassword() {
         return password;
     }
 
     /**
      * Set the value of State
      *
-     * @param State new value of State
+     * @param password new value of State
      */
-    public void setState(String State) {
-        this.password = State;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     /**
-     * Get the value of City
+     * Get the value of Loggedin
      *
-     * @return the value of City
+     * @return the value of loggedin
      */
-    public String getCity() {
-        return email;
+    public boolean getLoggedin() {
+        return loggedin;
     }
 
     /**
-     * Set the value of City
+     * Set the value of loggedin
      *
-     * @param City new value of City
+     * @param loggedin new value of loggedin
      */
-    public void setCity(String City) {
-        this.email = City;
+    public void setLoggedin(boolean loggedin) {
+        this.loggedin = loggedin;
     }
 
     /**
@@ -144,11 +144,12 @@ public class EditProfileBean implements Serializable {
      * supports CMT
      */
     public void update() {
-        updateProfileBean.update(uid, name, email, password);
+        updateProfileBean.update(uid, name, loggedin, password);
     }
     
-    public void delete(Profile p) {
-        updateProfileBean.deleteAction(p);
+    public void Loggedin(Profile profile) {
+        updateProfileBean.Loggedin(profile);
     }
+    
 
 }
